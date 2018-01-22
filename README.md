@@ -1,4 +1,4 @@
-S ROM - Manifest ((WIP))
+jOS - Manifest ((WIP))
 ===========
 
 jOS is an open source Android distrobution based on LineageOS for the Google Pixel 2 and Pixel 2 XL. This repo contains the repo manifest files for downloading the source code. As it stands (January 22, 2018), I'm working on getting core functionality up and running. After, I can begin cherry-picking and implementing my own unique features.
