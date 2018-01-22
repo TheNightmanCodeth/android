@@ -1,52 +1,44 @@
-LineageOS
+jOS ROM - Manifest ((WIP))
 ===========
 
-Submitting Patches
-------------------
+jOS is an open source Android distrobution based on LineageOS for the Google Pixel 2 and Pixel 2 XL. This repo contains the repo manifest files for downloading the source code. As it stands (January 22, 2018), I'm working on getting core functionality up and running. After, I can begin cherry-picking and implementing my own unique features.
 
-Patches are always welcome!  Please submit your patches via LineageOS Gerrit.
-You can do this by using these commands:
+Goals
+--------------
+* Stay as close to stock Pixel functionality as possible
+* Implement unique tweaks to Google's view of the perfect mobile experience
+* Stability and Speed which is acheived thanks to a tight Lineage base and ElementalX kernel
 
-    (From root android directory)
-    . build/envsetup.sh
-    (Go to repo you are patching, make your changes and commit)
-    lineagegerrit <for(new)/changes(patch set)> <branch/change-id>
+To-do
+--------------
+- [X] Boot
+- [X] Wireless drivers
+- [X] Gapps
+- [X] ElementalX kernel
+- [ ] ActiveEdge functionality
 
-    repo start lineage-15.1 .
-    (Make your changes and commit)
-    repo upload .
-
-Note: "." means the current directory
-For more help on using this tool, use this command: `repo help upload`
-
-Make your changes and commit with a detailed message, starting with what you are working with (i.e. "vision: Update Kernel")
-Commit your patches in a single commit. Squash multiple commits using this command: `git rebase -i HEAD~<# of commits>`
-
-To view the status of your and others' patches, visit [LineageOS Code Review](https://review.lineageos.org/)
+^==========="Core functionality"===========^ 
+- [ ] Advanced reboot menu (recovery & bootloader)
+- [ ] Magisk systemless root preinstalled
+- [ ] Custom Gapps install (opengapps cannot be flashed as of yet on pixel 2 devices due to A/B partition scheme)
+- [ ] Custom (dark) boot animation
+- [ ] Substratum theme engine
+- [ ] Navbar tweaks
+- [ ] Statusbar tweaks
 
 
 Getting Started
 ---------------
 
-To get started with Android/LineageOS, you'll need to get
+To get started with Android/jOS, you'll need to get
 familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 To initialize your local repository using the LineageOS trees, use a command like this:
 
-    repo init -u git://github.com/LineageOS/android.git -b staging/lineage-15.1
+    repo init -u git://github.com/TheNightmanCodeth/android.git -b los-15.1
 
 Then to sync up:
 
-    repo sync
+    repo sync (-j8 to use 8 threads to sync up faster)
 
 Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions.
-
-
-Buildbot
---------
-
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Jenkins](https://jenkins.lineageos.org/)
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/)
