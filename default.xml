@@ -8,6 +8,11 @@
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
+  <remote  name="nmc"
+           fetch="git://github.com/"
+           revision="refs/heads/cr-6.1"
+           sync-j="8" />
+
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="android-review.googlesource.com"
@@ -60,6 +65,19 @@
   <project path="device/generic/x86_64" name="device/generic/x86_64" groups="pdk" remote="aosp" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" remote="aosp" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" remote="aosp" />
+
+  <!-- TheNightmanCodeth Taimen device repos -->
+  <project name="TheNightmanCodeth/android_device_google_taimen" path="device/google/taimen" remote="nmc" revision="cr-6.1" />
+  <project name="TheNightmanCodeth/android_device_google_wahoo" path="device/google/wahoo" remote="nmc" revision="cr-6.1" />
+
+  <!-- ElementalX kernel tree -->
+  <prject name="flar2/wahoo" path="kernel/google/wahoo" remote="elemental" />
+
+  <!-- Opengapps -->
+  <remote name="opengapps" fetch="https://github.com/opengapps" />
+  <project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+  <project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps" />
+
   <project path="device/sample" name="device/sample" groups="pdk" remote="aosp" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" remote="aosp" />
   <project path="external/abi-compliance-checker" name="platform/external/abi-compliance-checker" groups="pdk" remote="aosp" />
